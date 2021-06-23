@@ -1,0 +1,17 @@
+<div class="container">
+    <button *ngIf="board[0][0] < 1; else elseBtn" (click)="play(0)">Click</button>
+    <button *ngIf="board[0][1] < 1; else elseBtn" (click)="play(1)">Click</button>
+    <button *ngIf="board[0][2] < 1; else elseBtn" (click)="play(2)">Click</button>
+    <button *ngIf="board[0][3] < 1; else elseBtn" (click)="play(3)">Click</button>
+    <button *ngIf="board[0][4] < 1; else elseBtn" (click)="play(4)">Click</button>
+    <button *ngIf="board[0][5] < 1; else elseBtn" (click)="play(5)">Click</button>
+    <button *ngIf="board[0][6] < 1; else elseBtn" (click)="play(6)">Click</button>
+
+    <ng-template #elseBtn> <button disabled>Click</button> </ng-template>
+</div>
+
+<div class="board">
+    <div *ngFor="let row of board" class="row">
+        <div *ngFor="let col of row" [ngClass]="{'yellow': col === 1, 'red': col === 2}">{{col}}</div>
+    </div>
+</div>
