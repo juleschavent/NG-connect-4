@@ -71,6 +71,8 @@ export class BoardComponent implements OnInit {
           // If 4 chips in a col are the same, then win
           if (tempBoard[y][x] === tempBoard[y + 1][x] && tempBoard[y + 1][x] === tempBoard[y + 2][x] && tempBoard[y + 2][x] === tempBoard[y + 3][x]) {
             console.log('col winner')
+            this.isWinner = true;
+            alert('Winner is Player' + this.currentPlayer)
           };
         };
       };
@@ -95,10 +97,14 @@ export class BoardComponent implements OnInit {
           // If 4 chips in a diagonal going to the right are the same, then win
           if (tempBoard[y][x] === tempBoard[y + 1][x + 1] && tempBoard[y + 1][x + 1] === tempBoard[y + 2][x + 2] && tempBoard[y + 2][x + 2] === tempBoard[y + 3][x + 3]) {
             console.log('diag winner')
+            this.isWinner = true;
+            alert('Winner is Player' + this.currentPlayer)
           };
           // If 4 chips in a diagonal going to the left are the same, then win
           if (tempBoard[y][x] === tempBoard[y + 1][x - 1] && tempBoard[y + 1][x - 1] === tempBoard[y + 2][x - 2] && tempBoard[y + 2][x - 2] === tempBoard[y + 3][x - 3]) {
             console.log('diag winner')
+            this.isWinner = true;
+            alert('Winner is Player' + this.currentPlayer)
           };
         };
       };
