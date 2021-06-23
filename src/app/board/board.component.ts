@@ -28,21 +28,7 @@ export class BoardComponent implements OnInit {
   ];
 
   currentPlayer = 1;
-  yellow = false;
-  red = false;
-
-  testDisplay() {
-    for (const row of this.board) {
-      console.log('row', row)
-      for (const el of row) {
-        if (el === 1){
-          this.yellow = true;
-        } else if (el === 2){
-          this.red = true;
-        }
-      }
-    }
-  }
+  isWinner =  false;
 
   findWinnerRow() {
     // Loop on every array/row of the board
@@ -59,6 +45,8 @@ export class BoardComponent implements OnInit {
             if (el[i] === el[i + 1] && el[i + 1] === el[i + 2] && el[i + 2] === el[i + 3]) {
               // Then you have a winner
               console.log(el, "row winner")
+              this.isWinner = true;
+              alert('Winner is Player' + this.currentPlayer)
             };
           };
         };
@@ -152,8 +140,6 @@ export class BoardComponent implements OnInit {
 
     // Real Board is beeing set to the value of the temporary board
     this.board = tempBoard;
-
-    this.testDisplay();
 
     this.findWinnerRow();
     this.findWinnerCol();

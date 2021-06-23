@@ -1,3 +1,6 @@
+<h2 *ngIf="isWinner && currentPlayer === 2">Winner is Player 1 as Yellow</h2>
+<h2 *ngIf="isWinner && currentPlayer === 1">Winner is Player 2 as Red</h2>
+
 <div class="container">
     <button *ngIf="board[0][0] < 1; else elseBtn" (click)="play(0)">Click</button>
     <button *ngIf="board[0][1] < 1; else elseBtn" (click)="play(1)">Click</button>
