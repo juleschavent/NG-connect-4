@@ -34,9 +34,11 @@ export class BoardComponent implements OnInit {
             // If there are 4 consecutive num starting from the previously set starting index
             if (el[i] === el[i + 1] && el[i + 1] === el[i + 2] && el[i + 2] === el[i + 3]) {
               // Then you have a winner
-              console.log(el, "row winner")
+
               this.isWinner = true;
-              alert('Winner is Player' + this.currentPlayer)
+
+              // console.log(el, "row winner")
+              // alert('Winner is Player' + this.currentPlayer)
             };
           };
         };
@@ -60,9 +62,11 @@ export class BoardComponent implements OnInit {
         if (tempBoard[y][x] === player) {
           // If 4 chips in a col are the same, then win
           if (tempBoard[y][x] === tempBoard[y + 1][x] && tempBoard[y + 1][x] === tempBoard[y + 2][x] && tempBoard[y + 2][x] === tempBoard[y + 3][x]) {
-            console.log('col winner')
+            
             this.isWinner = true;
-            alert('Winner is Player' + this.currentPlayer)
+
+            // console.log('col winner')
+            // alert('Winner is Player' + this.currentPlayer)
           };
         };
       };
@@ -92,9 +96,11 @@ export class BoardComponent implements OnInit {
           };
           // If 4 chips in a diagonal going to the left are the same, then win
           if (tempBoard[y][x] === tempBoard[y + 1][x - 1] && tempBoard[y + 1][x - 1] === tempBoard[y + 2][x - 2] && tempBoard[y + 2][x - 2] === tempBoard[y + 3][x - 3]) {
-            console.log('diag winner')
+            
             this.isWinner = true;
-            alert('Winner is Player' + this.currentPlayer)
+
+            // console.log('diag winner')
+            // alert('Winner is Player' + this.currentPlayer)
           };
         };
       };
@@ -111,7 +117,6 @@ export class BoardComponent implements OnInit {
       };      
     };
     if (freeSpaceCounter == 42){
-      alert('tie');
       this.isTie = true;
     };
   };

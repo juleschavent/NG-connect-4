@@ -1,9 +1,9 @@
 <div class="container">
 
-    <h2 *ngIf="isWinner && currentPlayer === 2">Winner is Player 1 as Yellow</h2>
-    <h2 *ngIf="isWinner && currentPlayer === 1">Winner is Player 2 as Red</h2>
-    <h2 *ngIf="isTie">Game is a tie</h2>
-    <button *ngIf="isWinner || isTie" (click)="restartBoard()">Restart</button>
+    <h2 *ngIf="isWinner && currentPlayer === 2" class="winner">Congratz <span class="winner--yellow">Player 1</span> you won 🎉</h2>
+    <h2 *ngIf="isWinner && currentPlayer === 1" class="winner">Congratz <span class="winner--red">Player 2</span> you won 🎉</h2>
+    <h2 *ngIf="isTie" class="winner">Game is a tie 🤝</h2>
+    <button *ngIf="isWinner || isTie" (click)="restartBoard()" class="btn__restart">Restart</button>
 
     <div class="input__container">
         <button *ngIf="board[0][0] < 1 && isWinner == false; else elseBtn" (click)="play(0)" class="input__btn"><i
