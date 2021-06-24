@@ -1,8 +1,8 @@
-p {
+.container {
     font-size: 1rem;
     position: absolute;
     bottom: 0;
-    width: fit-content;
+    width: 100%;
     text-align: center;
     left: 50%;
     transform: translatex(-50%);
