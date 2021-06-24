@@ -6,7 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BoardComponent } from './board/board.component';
 import { FooterComponent } from './footer/footer.component';
-import { TestBoardComponent } from './test-board/test-board.component';
+import { RulesComponent} from './rules/rules.component';
+import { HowToPlayComponent } from './how-to-play/how-to-play.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion'
+import { MatDialogModule} from '@angular/material/dialog';
+import { MatSliderModule } from '@angular/material/slider';
+
 
 @NgModule({
   declarations: [
@@ -14,13 +21,19 @@ import { TestBoardComponent } from './test-board/test-board.component';
     HeaderComponent,
     BoardComponent,
     FooterComponent,
-    TestBoardComponent
+    HowToPlayComponent,
+    RulesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    MatDialogModule,
+    MatSliderModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [RulesComponent]
 })
 export class AppModule { }

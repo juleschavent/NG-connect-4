@@ -7,17 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardComponent implements OnInit {
 
-  //6 row 7 col
-
-  testBoard = [
-    [1, 2, 3, 4, 5, 6, 7],
-    [8, 9, 10, 11, 12, 13, 14],
-    [15, 16, 17, 18, 19, 20, 21],
-    [22, 23, 24, 25, 26, 27, 28],
-    [29, 30, 31, 32, 33, 34, 35],
-    [36, 37, 38, 39, 40, 41, 42]
-  ];
-
   board = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -26,10 +15,11 @@ export class BoardComponent implements OnInit {
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0]
   ];
-
   currentPlayer = 1;
   isWinner =  false;
+  isTie = false;
 
+  //------------------------------------------METHODS-------------------------------
   findWinnerRow() {
     // Loop on every array/row of the board
     for (const el of this.board) {
@@ -111,6 +101,41 @@ export class BoardComponent implements OnInit {
     };
   };
 
+  findWinnerTie(){
+    let freeSpaceCounter = 0;
+    for (const row of this.board) {
+      for (const el of row) {
+        if (el != 0) {
+          freeSpaceCounter += 1;
+        };
+      };      
+    };
+    if (freeSpaceCounter == 42){
+      alert('tie');
+      this.isTie = true;
+    };
+  };
+
+  restartBoard(){
+    // When a player wins, if this method is executed it restart the game
+    // The method will be executed on click on a button
+    if (this.isWinner == true || this.isTie == true){
+      // Set the board to an empty board
+      this.board = [
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0]
+      ];
+      // Reset the winner state of the game
+      this.currentPlayer = 1;
+      this.isWinner = false;
+      this.isTie = false;
+    };
+  };
+
   // Define a methode with a propriety to use inside the DOM
   play(num: any) {
     // Define variables to be used inside the methode
@@ -147,6 +172,7 @@ export class BoardComponent implements OnInit {
     // Real Board is beeing set to the value of the temporary board
     this.board = tempBoard;
 
+    this.findWinnerTie();
     this.findWinnerRow();
     this.findWinnerCol();
     this.findWinnerDiag();
@@ -164,6 +190,19 @@ export class BoardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+
+  //TEST CODE
+  //6 row 7 col
+
+  // testBoard = [
+  //   [1, 2, 3, 4, 5, 6, 7],
+  //   [8, 9, 10, 11, 12, 13, 14],
+  //   [15, 16, 17, 18, 19, 20, 21],
+  //   [22, 23, 24, 25, 26, 27, 28],
+  //   [29, 30, 31, 32, 33, 34, 35],
+  //   [36, 37, 38, 39, 40, 41, 42]
+  // ];
 }

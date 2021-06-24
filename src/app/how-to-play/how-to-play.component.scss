@@ -1,0 +1,30 @@
+.rule {
+  font-size: 2rem;
+  color: #A8DADC;
+  transition: .1s ease;
+  margin: 1rem;
+}
+
+.input__btn {
+  border: none;
+  background: none;
+  color: #1D3557;
+  transition: .1s ease;
+  margin: 1rem;
+}
+
+button {
+  padding: .5rem 1.5rem;
+  background-color: #1D3557;
+  color: white;
+  border: none;
+  border-radius: .2rem;
+  transition: .1s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+    color: #1D3557;
+    border: .1rem solid #1D3557;
+  }
+}

@@ -1,45 +1,91 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+//MAIN CONTAINER
 .container {
-  padding: 10px;
-  background: gray;
-  display: grid;
-  grid-template-columns: repeat(7, 100px);
-  gap: 10px;
-  max-width: fit-content;
+  max-width: 35rem;
+  padding: 0 1rem;
   margin: 0 auto;
 }
+
+//INPUT BUTTON
+.input__container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  width: 100%;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+}
+
+.input__btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #1D3557;
+  transition: .1s ease;
+
+  &:hover {
+    color: #A8DADC;
+    background-color: #457B9D;
+    border-radius: 10rem;
+  }
+}
+
+.input__btn--disabled {
+  border: none;
+  background: none;
+  color: #A8DADC;
+}
+
+//BOARD
 
 .board {
-  padding: 10px;
-  background: gray;
-  max-width: fit-content;
-  margin: 0 auto;
+  background: #457B9D;
+  position: relative;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 .1rem .4rem black;
+}
+
+.board__layout {
+  content: '';
+  width: 100%;
+  height: 100%;
+
+  background: url(../../assets/layout-xs.png);
+  background-size: 89% 86%;
+  background-repeat: no-repeat;
+
+  position: absolute;
 }
 
 .row {
   display: grid;
-  grid-template-columns: repeat(7, 100px);
-  gap: 10px;
-  height: 100px;
+  grid-template-columns: repeat(7, 1fr);
+
+  background: #A8DADC;
+
+  width: 100%;
+  height: 4rem;
+
+  // border: 1px solid;
 }
 
+//CHIPS
 .yellow {
   width: 100%;
   height: 100%;
-  background: yellow;
-  padding: 10px;
+  background: rgb(255, 255, 94);
   border-radius: 50%;
 }
 
 .red {
   width: 100%;
   height: 100%;
-  background: rgb(255, 0, 0);
-  padding: 10px;
+  background: rgb(255, 74, 74);
   border-radius: 50%;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    max-width: 50rem;
+  }
 }
