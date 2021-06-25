@@ -12,7 +12,8 @@ import { HowToPlayComponent } from './how-to-play/how-to-play.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion'
 import { MatDialogModule} from '@angular/material/dialog';
-import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ToggleDarkModeComponent } from './toggle-dark-mode/toggle-dark-mode.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatSliderModule } from '@angular/material/slider';
     BoardComponent,
     FooterComponent,
     HowToPlayComponent,
-    RulesComponent
+    RulesComponent,
+    ToggleDarkModeComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,7 @@ import { MatSliderModule } from '@angular/material/slider';
     BrowserAnimationsModule,
     MatExpansionModule,
     MatDialogModule,
-    MatSliderModule
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],

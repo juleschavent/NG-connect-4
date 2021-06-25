@@ -1,26 +1,32 @@
-* {
-  text-align: center;
+.toggle__mode {
+  padding: 1rem;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-.title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: #1D3557;
+.toggle__mode__icon {
+  margin-left: 1rem;
+  color: #A8DADC;
+  transition: .1s ease;
+
+  &:hover {
+    color: #1D3557;
+    font-size: 2rem;
+  }
 }
 
-.container__rules {
-  max-width: 80rem;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  color: #1D3557;
-}
-
-.rule {
+.container__displayMode__info {
   font-size: 2rem;
   color: #A8DADC;
   transition: .1s ease;
   cursor: pointer;
+  padding: 1rem;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 0;
 
   &:hover {
     color: #1D3557;
@@ -28,19 +34,15 @@
   }
 }
 
-// .rules__header {
-//   max-width: fit-content;
-//   font-size: 2rem;
-//   transition: .2s ease;
+.game__title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 4rem;
+  color: #1D3557;
+  text-align: center;
+}
 
-//   &:hover {
-//     text-decoration: underline;
-//     font-weight: 700;
-//   }
-// }
 
-// .rules__text {
-//   font-size: 1.5rem;
-//   text-align: left;
-//   margin-bottom: 1rem;
-// }
+.test {
+  color: red;
+}

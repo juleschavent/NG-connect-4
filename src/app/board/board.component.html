@@ -1,35 +1,47 @@
+<div *ngIf="isWinner && winnerModal" (click)="winnerModal = false" class="container__winner">
+        <h2 *ngIf="isWinner && currentPlayer === 2" class="winner">Congratz <span class="winner--yellow">Player
+                        1</span> you won 🎉<i class="winner__close fas fa-times-circle"></i></h2>
+        <h2 *ngIf="isWinner && currentPlayer === 1" class="winner">Congratz <span class="winner--red">Player
+                        2</span> you won 🎉<i class="winner__close fas fa-times-circle"></i></h2>
+        <h2 *ngIf="isTie" class="winner">Game is a tie 🤝<i class="winner__close fas fa-times-circle"></i></h2>
+</div>
+
 <div class="container">
+        <div class="btn__container">
+                <button (click)="restartBoard()" class="btn__restart"><i class="fas fa-play"></i> New game</button>
+                <h2 *ngIf="isWinner === false && currentPlayer === 1" class="currentPlayer">Current player : <span
+                                class="winner--yellow">Player 1</span></h2>
+                <h2 *ngIf="isWinner === false && currentPlayer === 2" class="currentPlayer">Current player : <span
+                                class="winner--red">Player
+                                2</span></h2>
+        </div>
 
-    <h2 *ngIf="isWinner && currentPlayer === 2" class="winner">Congratz <span class="winner--yellow">Player 1</span> you won 🎉</h2>
-    <h2 *ngIf="isWinner && currentPlayer === 1" class="winner">Congratz <span class="winner--red">Player 2</span> you won 🎉</h2>
-    <h2 *ngIf="isTie" class="winner">Game is a tie 🤝</h2>
-    <button *ngIf="isWinner || isTie" (click)="restartBoard()" class="btn__restart">Restart</button>
+        <div class="input__container">
+                <button *ngIf="board[0][0] < 1 && isWinner == false; else elseBtn" (click)="play(0)"
+                        class="input__btn"><i class="fas fa-chevron-down"></i></button>
+                <button *ngIf="board[0][1] < 1 && isWinner == false; else elseBtn" (click)="play(1)"
+                        class="input__btn"><i class="fas fa-chevron-down"></i></button>
+                <button *ngIf="board[0][2] < 1 && isWinner == false; else elseBtn" (click)="play(2)"
+                        class="input__btn"><i class="fas fa-chevron-down"></i></button>
+                <button *ngIf="board[0][3] < 1 && isWinner == false; else elseBtn" (click)="play(3)"
+                        class="input__btn"><i class="fas fa-chevron-down"></i></button>
+                <button *ngIf="board[0][4] < 1 && isWinner == false; else elseBtn" (click)="play(4)"
+                        class="input__btn"><i class="fas fa-chevron-down"></i></button>
+                <button *ngIf="board[0][5] < 1 && isWinner == false; else elseBtn" (click)="play(5)"
+                        class="input__btn"><i class="fas fa-chevron-down"></i></button>
+                <button *ngIf="board[0][6] < 1 && isWinner == false; else elseBtn" (click)="play(6)"
+                        class="input__btn"><i class="fas fa-chevron-down"></i></button>
 
-    <div class="input__container">
-        <button *ngIf="board[0][0] < 1 && isWinner == false; else elseBtn" (click)="play(0)" class="input__btn"><i
-                class="fas fa-chevron-down"></i></button>
-        <button *ngIf="board[0][1] < 1 && isWinner == false; else elseBtn" (click)="play(1)" class="input__btn"><i
-                class="fas fa-chevron-down"></i></button>
-        <button *ngIf="board[0][2] < 1 && isWinner == false; else elseBtn" (click)="play(2)" class="input__btn"><i
-                class="fas fa-chevron-down"></i></button>
-        <button *ngIf="board[0][3] < 1 && isWinner == false; else elseBtn" (click)="play(3)" class="input__btn"><i
-                class="fas fa-chevron-down"></i></button>
-        <button *ngIf="board[0][4] < 1 && isWinner == false; else elseBtn" (click)="play(4)" class="input__btn"><i
-                class="fas fa-chevron-down"></i></button>
-        <button *ngIf="board[0][5] < 1 && isWinner == false; else elseBtn" (click)="play(5)" class="input__btn"><i
-                class="fas fa-chevron-down"></i></button>
-        <button *ngIf="board[0][6] < 1 && isWinner == false; else elseBtn" (click)="play(6)" class="input__btn"><i
-                class="fas fa-chevron-down"></i></button>
-
-        <ng-template #elseBtn> <button class="input__btn--disabled" disabled><i class="fas fa-times"></i></button>
-        </ng-template>
-    </div>
+                <ng-template #elseBtn> <button class="input__btn--disabled" disabled><i
+                                        class="fas fa-times"></i></button>
+                </ng-template>
+        </div>
 
         <div class="board">
-            <div class="board__layout"></div>
-            <div *ngFor="let row of board" class="row">
-                <div *ngFor="let col of row" [ngClass]="{'yellow': col === 1, 'red': col === 2}"></div>
-            </div>
+                <div class="board__layout"></div>
+                <div *ngFor="let row of board" class="row">
+                        <div *ngFor="let col of row" [ngClass]="{'yellow': col === 1, 'red': col === 2}"></div>
+                </div>
         </div>
 
 </div>

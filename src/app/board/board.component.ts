@@ -5,7 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
+
+
 export class BoardComponent implements OnInit {
+
+  message = "mon message"
 
   board = [
     [0, 0, 0, 0, 0, 0, 0],
@@ -16,8 +20,9 @@ export class BoardComponent implements OnInit {
     [0, 0, 0, 0, 0, 0, 0]
   ];
   currentPlayer = 1;
-  isWinner =  false;
+  isWinner = false;
   isTie = false;
+  winnerModal = false;
 
   //------------------------------------------METHODS-------------------------------
   findWinnerRow() {
@@ -36,6 +41,7 @@ export class BoardComponent implements OnInit {
               // Then you have a winner
 
               this.isWinner = true;
+              this.winnerModal = true;
 
               // console.log(el, "row winner")
               // alert('Winner is Player' + this.currentPlayer)
@@ -62,8 +68,9 @@ export class BoardComponent implements OnInit {
         if (tempBoard[y][x] === player) {
           // If 4 chips in a col are the same, then win
           if (tempBoard[y][x] === tempBoard[y + 1][x] && tempBoard[y + 1][x] === tempBoard[y + 2][x] && tempBoard[y + 2][x] === tempBoard[y + 3][x]) {
-            
+
             this.isWinner = true;
+            this.winnerModal = true;
 
             // console.log('col winner')
             // alert('Winner is Player' + this.currentPlayer)
@@ -90,14 +97,18 @@ export class BoardComponent implements OnInit {
         if (tempBoard[y][x] === player) {
           // If 4 chips in a diagonal going to the right are the same, then win
           if (tempBoard[y][x] === tempBoard[y + 1][x + 1] && tempBoard[y + 1][x + 1] === tempBoard[y + 2][x + 2] && tempBoard[y + 2][x + 2] === tempBoard[y + 3][x + 3]) {
-            console.log('diag winner')
+
             this.isWinner = true;
-            alert('Winner is Player' + this.currentPlayer)
+            this.winnerModal = true;
+
+            // console.log('diag winner')
+            // alert('Winner is Player' + this.currentPlayer)
           };
           // If 4 chips in a diagonal going to the left are the same, then win
           if (tempBoard[y][x] === tempBoard[y + 1][x - 1] && tempBoard[y + 1][x - 1] === tempBoard[y + 2][x - 2] && tempBoard[y + 2][x - 2] === tempBoard[y + 3][x - 3]) {
-            
+
             this.isWinner = true;
+            this.winnerModal = true;
 
             // console.log('diag winner')
             // alert('Winner is Player' + this.currentPlayer)
@@ -107,38 +118,37 @@ export class BoardComponent implements OnInit {
     };
   };
 
-  findWinnerTie(){
+  findWinnerTie() {
     let freeSpaceCounter = 0;
     for (const row of this.board) {
       for (const el of row) {
         if (el != 0) {
           freeSpaceCounter += 1;
         };
-      };      
+      };
     };
-    if (freeSpaceCounter == 42){
+    if (freeSpaceCounter == 42) {
       this.isTie = true;
+      this.winnerModal = true;
     };
   };
 
-  restartBoard(){
-    // When a player wins, if this method is executed it restart the game
+  restartBoard() {
     // The method will be executed on click on a button
-    if (this.isWinner == true || this.isTie == true){
-      // Set the board to an empty board
-      this.board = [
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0]
-      ];
-      // Reset the winner state of the game
-      this.currentPlayer = 1;
-      this.isWinner = false;
-      this.isTie = false;
-    };
+    // Set the board to an empty board
+    this.board = [
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0, 0, 0]
+    ];
+    // Reset winner states of the game
+    this.currentPlayer = 1;
+    this.isWinner = false;
+    this.isTie = false;
+    this.winnerModal = false;
   };
 
   // Define a methode with a propriety to use inside the DOM
