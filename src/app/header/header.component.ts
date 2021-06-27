@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { RulesComponent } from '../rules/rules.component';
 import { HowToPlayComponent } from '../how-to-play/how-to-play.component';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +10,7 @@ import { HowToPlayComponent } from '../how-to-play/how-to-play.component';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
-
-  openDialog() {
-    this.dialog.open(RulesComponent);
-  }
+  constructor(public dialog: MatDialog, public settings: SettingsService) { }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,4 @@
-.toggle__mode {
+.container__displayMode__info {
   font-size: 2rem;
   color: #A8DADC;
   transition: .1s ease;
@@ -6,15 +6,11 @@
   padding: 1rem 2rem;
   box-sizing: border-box;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
 
   &:hover {
     color: #1D3557;
     font-size: 3rem;
   }
-}
-
-.toggle__mode__icon {
-    margin-left: 1rem;
 }

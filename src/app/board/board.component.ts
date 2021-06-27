@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
   selector: 'app-board',
@@ -202,22 +203,9 @@ export class BoardComponent implements OnInit {
     console.log("board", this.board)
   };
 
-  constructor() { }
+  constructor(public settings: SettingsService) { }
 
   ngOnInit(): void {
 
   }
-
-
-  //TEST CODE
-  //6 row 7 col
-
-  // testBoard = [
-  //   [1, 2, 3, 4, 5, 6, 7],
-  //   [8, 9, 10, 11, 12, 13, 14],
-  //   [15, 16, 17, 18, 19, 20, 21],
-  //   [22, 23, 24, 25, 26, 27, 28],
-  //   [29, 30, 31, 32, 33, 34, 35],
-  //   [36, 37, 38, 39, 40, 41, 42]
-  // ];
 }

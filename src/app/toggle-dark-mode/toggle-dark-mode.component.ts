@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
   selector: 'app-toggle-dark-mode',
@@ -7,13 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToggleDarkModeComponent implements OnInit {
 
-  isDarkMode = false;
-
-  slideToggle() {
-    this.isDarkMode = !this.isDarkMode;
-  }
-
-  constructor() { }
+  constructor(public settings: SettingsService) { }
 
   ngOnInit(): void {
   }

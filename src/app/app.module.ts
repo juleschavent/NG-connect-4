@@ -14,6 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion'
 import { MatDialogModule} from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ToggleDarkModeComponent } from './toggle-dark-mode/toggle-dark-mode.component';
+import { InfoComponent } from './info/info.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ToggleDarkModeComponent } from './toggle-dark-mode/toggle-dark-mode.com
     FooterComponent,
     HowToPlayComponent,
     RulesComponent,
-    ToggleDarkModeComponent
+    ToggleDarkModeComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

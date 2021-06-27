@@ -1,4 +1,1 @@
-<div class="container__displayMode">
-    <i (click)="openDialog()" class="container__displayMode__info fas fa-info-circle"></i>
-</div>
-<h1 class="game__title">Connect 4</h1>
+<h1 class="game__title" [ngClass]="{'game__title--dark': settings.isDarkMode}">Connect 4</h1>

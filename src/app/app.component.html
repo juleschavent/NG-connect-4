@@ -1,7 +1,13 @@
-<app-toggle-dark-mode></app-toggle-dark-mode>
+<div class="main__container" class="main__container" [ngClass]="{'main__container--dark': settings.isDarkMode}">
 
-<app-header></app-header>
+    <app-toggle-dark-mode></app-toggle-dark-mode>
 
-<router-outlet></router-outlet>
+    <app-info></app-info>
 
-<app-footer></app-footer>
+    <app-header></app-header>
+
+    <router-outlet></router-outlet>
+
+    <app-footer></app-footer>
+
+</div>

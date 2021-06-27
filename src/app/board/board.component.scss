@@ -31,6 +31,10 @@
   }
 }
 
+.input__btn--dark {
+  color: #A8DADC;
+}
+
 .input__btn--disabled {
   border: none;
   background: none;
@@ -159,6 +163,10 @@
   font-size: 1.5rem;
 }
 
+.currentPlayer--dark {
+  color: #A8DADC;
+}
+
 .btn__restart {
   padding: .5rem 1.5rem;
   background-color: transparent;
@@ -171,6 +179,16 @@
   &:hover {
     background-color: #1D3557;
     color: white;
+  }
+}
+
+.btn__restart--dark {
+  color: #A8DADC;
+  border: .1rem solid #A8DADC;
+
+  &:hover {
+    background-color: #A8DADC;
+    color: #1D3557;
   }
 }
 
@@ -197,22 +215,22 @@
 
 @media screen and (min-width: 1000px) {
   .container {
-    max-width: 90rem;
+    max-width: 70rem;
   }
 
   .board__layout {
-    background-size: 96% 95%;
+    background-size: 95% 94%;
   }
 
   .row {
-    height: 12rem;
+    height: 9rem;
   }
 
-   .input__btn {
-     font-size: 2.5rem;
-   }
+  .input__btn {
+    font-size: 2.5rem;
+  }
 
-   .currentPlayer {
-     font-size: 2rem;
-   }
+  .currentPlayer {
+    font-size: 2rem;
+  }
 }

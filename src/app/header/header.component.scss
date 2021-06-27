@@ -1,39 +1,3 @@
-.toggle__mode {
-  padding: 1rem;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.toggle__mode__icon {
-  margin-left: 1rem;
-  color: #A8DADC;
-  transition: .1s ease;
-
-  &:hover {
-    color: #1D3557;
-    font-size: 2rem;
-  }
-}
-
-.container__displayMode__info {
-  font-size: 2rem;
-  color: #A8DADC;
-  transition: .1s ease;
-  cursor: pointer;
-  padding: 1rem;
-  box-sizing: border-box;
-  position: absolute;
-  right: 0;
-  top: 0;
-
-  &:hover {
-    color: #1D3557;
-    font-size: 3rem;
-  }
-}
-
 .game__title {
   font-size: 3rem;
   font-weight: 700;
@@ -42,7 +6,6 @@
   text-align: center;
 }
 
-
-.test {
-  color: red;
+.game__title--dark {
+  color: #A8DADC;
 }
