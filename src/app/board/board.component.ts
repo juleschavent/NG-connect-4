@@ -10,8 +10,6 @@ import { SettingsService } from '../services/settings.service';
 
 export class BoardComponent implements OnInit {
 
-  message = "mon message"
-
   board = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -183,6 +181,7 @@ export class BoardComponent implements OnInit {
       row = length - 5;
     };
 
+    // Uses the variable Row to get the right index of the board. Then it replace de current value using the HTML input (num) by the current player ID (1 or 2)
     tempBoard[row].splice(num, 1, player);
 
     // Real Board is beeing set to the value of the temporary board
@@ -199,8 +198,6 @@ export class BoardComponent implements OnInit {
     } else {
       this.currentPlayer = 1;
     }
-
-    console.log("board", this.board)
   };
 
   constructor(public settings: SettingsService) { }

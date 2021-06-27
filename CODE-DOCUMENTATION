@@ -1,13 +1,10 @@
-# Connect4 FrontEnd Challenge / Jules Chavent
 Projet disponible à l'adresse suivante 
     => https://juleschavent.github.io/NG-connect-4/
 
 Code source disponible à l'adresse suivante
     => https://github.com/juleschavent/NG-connect-4
 
-## Réflexion :
-
-J'ai d'abord préféré prendre un moment pour comprendre les consignes et contraintes liées à l'exercice.
+Réflexion : J'ai d'abord préféré prendre un moment pour comprendre les consignes et contraintes liées à l'exercice.
 En effet, n'ayant pas encore eu l'occasion d'utiliser NG sur des projets, et avec seulement 3 semaines de JS, j'ai préféré prendre le temps nécssaire afin de comprendre les outils que j'allais utiliser.
 
 La première difficulté a été de comprendre le principe même de Angular mais aussi de NGXS. N'ayant pas encore eu l'occasion de travailler avec des state manager, j'ai vite rencontré une difficulté.
@@ -20,9 +17,7 @@ J'ai alors décidé de faire un premier test et d'effectuer l'exercice avec mes 
 Puis une fois que la logique était assimilé, j'ai adapté le projet à NG.
 
 
-## Exercice :
-
-Il y a eu une vraie évolution entre la première version de l'exercice et ce que je vous présente. J'ai essayé de comprendre l'organisation du frameWork et malgré la petite envergure du projet, j'ai essayé de me projeter et d'appliquer la même rigueur que si cela avait été un projet plus important.
+Exercice : Il y a eu une vraie évolution entre la première version de l'exercice et ce que je vous présente. J'ai essayé de comprendre l'organisation du frameWork et malgré la petite envergure du projet, j'ai essayé de me projeter et d'appliquer la même rigueur que si cela avait été un projet plus important.
 
 J'ai donc séparé les différentes parties de l'app en component.
     => app.component.html regroupe les différentes sections de l'app
@@ -34,9 +29,8 @@ J'ai commencé à comprendre l'intérêt de NGXS lorsque je me suis penché sur 
 J'ai donc découvert les shared services.
 C'est ici, je pense, que NGXS aurait été opportun mais par manque de temps et par souci de vous présenter un projet "terminé", j'ai préféré rester sur ce que je comprenais.
 
-## Compétences utilisées :
 
-J'ai utilisé plusieurs alternatives sur l'app. En effet le pop-up et le bouton des règles du jeu sont faits via NG Material alors que le pop-up lorsqu'un joueur gagne la partie est "fait main".
+Compétences utilisées : J'ai utilisé plusieurs alternatives sur l'app. En effet le pop-up et le bouton des règles du jeu sont faits via NG Material alors que le pop-up lorsqu'un joueur gagne la partie est "fait main".
 D'autre part, dans la partie logique du jeu "board.component.ts", j'ai utilisé des options différentes entre les méthodes findWinner() qui servent à vérifier s'il y a un gagnant à chaque coup.
 
 
